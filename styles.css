@@ -162,11 +162,19 @@ select {
   background: #080a0d;
 }
 
-#fly-view {
+#fly-body, #fly-view {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  display: block;
 }
+
+#fly-view {
+  object-fit: contain;
+  position: absolute;
+  inset: 0;
+}
+
+#fly-view[hidden] { display: none; }
 
 .water {
   position: absolute;

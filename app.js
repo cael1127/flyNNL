@@ -71,6 +71,9 @@ const ui = {
   bolts: [],
   seen: {},
   view: { scale: 1, ox: 0, oy: 0, dw: 900, dh: 700 },
+  physio: null,
+  tVis: 0,
+  hasJpeg: false,
 };
 
 function rgb(c, a = 1) {
@@ -461,6 +464,7 @@ function applyPhysio(p) {
   ui.phase = p.phase;
   ui.note = p.note;
   ui.t = p.t;
+  ui.physio = p;
 
   document.getElementById("o2").textContent = `${p.o2.toFixed(1)}%`;
   document.getElementById("atp").textContent = `${p.atp.toFixed(1)}%`;
@@ -540,7 +544,9 @@ function startOffline() {
   live = false;
   document.getElementById("engine").textContent = "browser-physio";
   document.getElementById("fly-status").textContent =
-    "Static host — brain, spikes, and chemistry run here. NeuroMechFly body needs the local Python server.";
+    "Browser body · legs follow TTMn / octopamine / excitability";
+  document.getElementById("fly-view").hidden = true;
+  ui.hasJpeg = false;
   applyVfb(STATIC_VFB);
 }
 
@@ -555,9 +561,13 @@ function connectWs() {
     document.getElementById("engine").textContent = msg.engine || "engine";
     if (msg.jpeg) {
       img.src = `data:image/jpeg;base64,${msg.jpeg}`;
+      img.hidden = false;
+      ui.hasJpeg = true;
       status.textContent = msg.ready ? "NeuroMechFly · legs follow TTMn Hz" : msg.error || "Physics not ready";
     } else {
-      status.textContent = msg.error || "Waiting for first frame";
+      img.hidden = true;
+      ui.hasJpeg = false;
+      status.textContent = msg.error || "Browser body · waiting for MuJoCo frame";
     }
     if (msg.physio) applyPhysio(msg.physio);
     if (msg.vfb) applyVfb(msg.vfb);
@@ -590,6 +600,7 @@ async function connect() {
 function init() {
   const brain = document.getElementById("brain");
   const ephys = document.getElementById("ephys");
+  const body = document.getElementById("fly-body");
   brain.addEventListener("click", (ev) => {
     const [x, y] = fromEvent(brain, ev);
     let hit = null;
@@ -611,14 +622,14 @@ function init() {
   renderInspector();
   let last = performance.now();
   function loop(now) {
+    const realDt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    ui.tVis += realDt;
     if (!live) {
-      const dt = Math.min(0.05, (now - last) / 1000);
-      last = now;
-      offline.step(dt * offline.s.speed);
+      offline.step(realDt * offline.s.speed);
       applyPhysio(offline.snapshot());
-    } else {
-      last = now;
     }
+    drawFlyBody(body, ui.physio, ui.tVis);
     drawBrain(brain);
     drawEphys(ephys);
     requestAnimationFrame(loop);
