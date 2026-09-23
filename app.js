@@ -587,7 +587,8 @@ function connectWs() {
 async function connect() {
   try {
     const r = await fetch("/health", { cache: "no-store" });
-    if (r.ok) {
+    const ct = r.headers.get("content-type") || "";
+    if (r.ok && ct.includes("json")) {
       connectWs();
       return;
     }
@@ -638,4 +639,10 @@ function init() {
   connect();
 }
 
-init();
+try {
+  init();
+} catch (err) {
+  const status = document.getElementById("fly-status");
+  if (status) status.textContent = `UI failed to start: ${err.message}`;
+  console.error(err);
+}

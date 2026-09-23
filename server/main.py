@@ -98,3 +98,13 @@ def styles() -> FileResponse:
 @app.get("/app.js")
 def script() -> FileResponse:
     return FileResponse(ROOT / "app.js", media_type="text/javascript", headers=NO_CACHE)
+
+
+@app.get("/physio.js")
+def physio_script() -> FileResponse:
+    return FileResponse(ROOT / "physio.js", media_type="text/javascript", headers=NO_CACHE)
+
+
+@app.get("/flybody.js")
+def flybody_script() -> FileResponse:
+    return FileResponse(ROOT / "flybody.js", media_type="text/javascript", headers=NO_CACHE)
