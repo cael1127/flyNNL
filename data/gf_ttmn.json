@@ -1,0 +1,114 @@
+{
+  "name": "gf_ttmn",
+  "params": {
+    "upstream_type": "FBbt_00004020",
+    "downstream_type": "FBbt_00007406",
+    "weight": "3"
+  },
+  "count": 5,
+  "resolved": {
+    "upstream": {
+      "query": "FBbt_00004020",
+      "id": "FBbt_00004020",
+      "label": "giant fiber neuron",
+      "classes_searched": 1,
+      "instances": 8
+    },
+    "downstream": {
+      "query": "FBbt_00007406",
+      "id": "FBbt_00007406",
+      "label": "mesothoracic tergotrochanter muscle motor neuron",
+      "classes_searched": 1,
+      "instances": 22
+    }
+  },
+  "warnings": [],
+  "excluded_dbs": [
+    "hb",
+    "fafb"
+  ],
+  "weight_sum": 375,
+  "unique_up": 4,
+  "unique_down": 4,
+  "sources": {
+    "neuprint_JRC_Manc_1_2_1": 3,
+    "male_cns_v1_0": 2
+  },
+  "top": [
+    {
+      "upstream_class": "giant fiber neuron",
+      "upstream_class_id": "FBbt_00004020",
+      "upstream_neuron_id": "VFB_jrcv07ps",
+      "upstream_neuron_name": "TBD (MANC:10000)",
+      "weight": 146,
+      "downstream_neuron_id": "VFB_jrcv07su",
+      "downstream_neuron_name": "TBD (MANC:10110)",
+      "downstream_class": "mesothoracic tergotrochanter muscle motor neuron",
+      "downstream_class_id": "FBbt_00007406",
+      "up_data_source": "neuprint_JRC_Manc_1_2_1",
+      "up_accession": "10000",
+      "down_data_source": "neuprint_JRC_Manc_1_2_1",
+      "down_accession": "10110"
+    },
+    {
+      "upstream_class": "giant fiber neuron",
+      "upstream_class_id": "FBbt_00004020",
+      "upstream_neuron_id": "VFB_jrcv07pu",
+      "upstream_neuron_name": "TBD (MANC:10002)",
+      "weight": 135,
+      "downstream_neuron_id": "VFB_jrcv07ro",
+      "downstream_neuron_name": "TBD (MANC:10068)",
+      "downstream_class": "mesothoracic tergotrochanter muscle motor neuron",
+      "downstream_class_id": "FBbt_00007406",
+      "up_data_source": "neuprint_JRC_Manc_1_2_1",
+      "up_accession": "10002",
+      "down_data_source": "neuprint_JRC_Manc_1_2_1",
+      "down_accession": "10068"
+    },
+    {
+      "upstream_class": "giant fiber neuron",
+      "upstream_class_id": "FBbt_00004020",
+      "upstream_neuron_id": "VFB_jrmc30my",
+      "upstream_neuron_name": "DNp01(GF)_R (MaleCNS:10001)",
+      "weight": 70,
+      "downstream_neuron_id": "VFB_jrmc0nlk",
+      "downstream_neuron_name": "TTMn_R (MaleCNS:800146)",
+      "downstream_class": "mesothoracic tergotrochanter muscle motor neuron",
+      "downstream_class_id": "FBbt_00007406",
+      "up_data_source": "male_cns_v1_0",
+      "up_accession": "10001",
+      "down_data_source": "male_cns_v1_0",
+      "down_accession": "800146"
+    },
+    {
+      "upstream_class": "giant fiber neuron",
+      "upstream_class_id": "FBbt_00004020",
+      "upstream_neuron_id": "VFB_jrmc30mz",
+      "upstream_neuron_name": "DNp01(GF)_L (MaleCNS:10010)",
+      "weight": 20,
+      "downstream_neuron_id": "VFB_jrmc0nll",
+      "downstream_neuron_name": "TTMn_L (MaleCNS:804642)",
+      "downstream_class": "mesothoracic tergotrochanter muscle motor neuron",
+      "downstream_class_id": "FBbt_00007406",
+      "up_data_source": "male_cns_v1_0",
+      "up_accession": "10010",
+      "down_data_source": "male_cns_v1_0",
+      "down_accession": "804642"
+    },
+    {
+      "upstream_class": "giant fiber neuron",
+      "upstream_class_id": "FBbt_00004020",
+      "upstream_neuron_id": "VFB_jrcv07pu",
+      "upstream_neuron_name": "TBD (MANC:10002)",
+      "weight": 4,
+      "downstream_neuron_id": "VFB_jrcv07su",
+      "downstream_neuron_name": "TBD (MANC:10110)",
+      "downstream_class": "mesothoracic tergotrochanter muscle motor neuron",
+      "downstream_class_id": "FBbt_00007406",
+      "up_data_source": "neuprint_JRC_Manc_1_2_1",
+      "up_accession": "10002",
+      "down_data_source": "neuprint_JRC_Manc_1_2_1",
+      "down_accession": "10110"
+    }
+  ]
+}

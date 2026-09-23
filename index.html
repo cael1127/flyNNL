@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>flyNNL — live CNS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <h1>Adult Drosophila CNS</h1>
+        <p>Somata flash on each spike. Pulses travel the axon. No cortisol — octopamine, corazonin, AKH.</p>
+      </div>
+      <div class="protocol">
+        <button class="danger" id="submerge">Submerge</button>
+        <button class="primary" id="surface">Surface</button>
+        <button class="ghost" id="reset">Reset</button>
+        <label class="speed">
+          Speed
+          <select id="speed">
+            <option value="1">1× seconds</option>
+            <option value="10" selected>10×</option>
+            <option value="60">60× minutes</option>
+            <option value="600">600×</option>
+            <option value="3600">3600× hours</option>
+          </select>
+        </label>
+      </div>
+      <div class="badges">
+        <div class="badge clock" id="clock">0.0 s</div>
+        <div class="badge" id="vfb-age">atlas cache</div>
+        <div class="badge" id="engine">engine…</div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <section class="brain-pane">
+        <div class="pane-head">
+          <h2>Brain and ventral nerve cord</h2>
+          <span id="brain-hint">Click a soma to trace it. Bright flash = action potential.</span>
+        </div>
+        <canvas id="brain"></canvas>
+      </section>
+
+      <section class="fly-pane">
+        <div class="pane-head">
+          <h2>Body</h2>
+          <span id="fly-status">Connecting…</span>
+        </div>
+        <div class="fly-frame">
+          <div class="water" id="water"></div>
+          <img id="fly-view" alt="NeuroMechFly body" />
+        </div>
+      </section>
+
+      <aside class="side">
+        <section class="phase-card">
+          <p class="phase" id="phase"><strong>Normoxia</strong> — Adult fly at rest. Network is sparse and metabolically cheap.</p>
+        </section>
+
+        <section class="readouts">
+          <h2>Energy and ions</h2>
+          <div class="kv"><label>Inspired O<sub>2</sub></label><b id="o2" class="cyan">21.0%</b><div class="bar"><i id="o2-bar" class="cyan"></i></div></div>
+          <div class="kv"><label>ATP vs rest</label><b id="atp" class="sage">100%</b><div class="bar"><i id="atp-bar" class="sage"></i></div></div>
+          <div class="kv"><label>Extracellular K<sup>+</sup></label><b id="k" class="rust">1.00×</b><div class="bar"><i id="k-bar" class="rust"></i></div></div>
+          <div class="kv"><label>Hemolymph pH</label><b id="ph">7.40</b><div class="bar"><i id="ph-bar"></i></div></div>
+          <div class="kv"><label>Excitability</label><b id="ex" class="amber">100%</b><div class="bar"><i id="ex-bar" class="amber"></i></div></div>
+          <div class="kv"><label>Survival odds</label><b id="surv">100%</b><div class="bar"><i id="surv-bar"></i></div></div>
+        </section>
+
+        <section class="readouts">
+          <h2>Stress chemistry — not cortisol</h2>
+          <div class="kv"><label>Octopamine</label><b id="oa" class="amber">1.00×</b><div class="bar"><i id="oa-bar" class="amber"></i></div></div>
+          <div class="kv"><label>Corazonin</label><b id="crz" class="cyan">1.00×</b><div class="bar"><i id="crz-bar" class="cyan"></i></div></div>
+          <div class="kv"><label>AKH</label><b id="akh">1.00×</b><div class="bar"><i id="akh-bar"></i></div></div>
+          <div class="kv"><label>Lactate</label><b id="lac" class="rust">0.00</b><div class="bar"><i id="lac-bar" class="rust"></i></div></div>
+          <div class="kv"><label>Alanine</label><b id="ala">0.00</b><div class="bar"><i id="ala-bar"></i></div></div>
+          <div class="kv"><label>Acetate</label><b id="ace">0.00</b><div class="bar"><i id="ace-bar"></i></div></div>
+          <div class="kv"><label>Glial Hsp70</label><b id="hsp" class="sage">0.05</b><div class="bar"><i id="hsp-bar" class="sage"></i></div></div>
+          <div class="kv"><label>ROS</label><b id="ros" class="rust">0.05</b><div class="bar"><i id="ros-bar" class="rust"></i></div></div>
+          <div class="kv"><label>AMPK</label><b id="ampk" class="amber">0.10</b><div class="bar"><i id="ampk-bar" class="amber"></i></div></div>
+        </section>
+
+        <section class="inspector" id="inspector">
+          <h2>Selected cell</h2>
+          <p class="hint">Click a glowing soma. You will see who drives it, where the spike goes, and why it is firing.</p>
+        </section>
+
+        <section class="events">
+          <h2>What just happened</h2>
+          <ol id="event-log"></ol>
+        </section>
+
+        <details class="vfb">
+          <summary>VFB synapse counts</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>Pair</th>
+                <th>Pairs</th>
+                <th>Synapses</th>
+                <th>Max</th>
+                <th>Sets</th>
+              </tr>
+            </thead>
+            <tbody id="vfb-body"></tbody>
+          </table>
+        </details>
+      </aside>
+    </div>
+
+    <section class="ephys">
+      <div class="pane-head">
+        <h2>Intracellular voltage — last 500 ms</h2>
+        <span>Each tick is one action potential. Baseline depolarizes as ATP / K<sup>+</sup> / pH fail.</span>
+      </div>
+      <canvas id="ephys"></canvas>
+    </section>
+  </div>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

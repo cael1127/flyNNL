@@ -1,0 +1,198 @@
+{
+  "pair": "LPLC2 -> giant fiber neuron",
+  "count": 275,
+  "excluded_dbs": [
+    "hb",
+    "fafb"
+  ],
+  "resolved": {
+    "upstream": {
+      "query": "LPLC2",
+      "id": "FBbt_00111763",
+      "label": "lobula plate-lobula columnar neuron LPLC2",
+      "classes_searched": 1,
+      "instances": 723
+    },
+    "downstream": {
+      "query": "giant fiber neuron",
+      "id": "FBbt_00004020",
+      "label": "giant fiber neuron",
+      "classes_searched": 1,
+      "instances": 8
+    }
+  },
+  "warnings": [
+    "'LPLC2' is not a VFB term; matched the only term containing it: 'lobula plate-lobula columnar neuron LPLC2' (FBbt_00111763)."
+  ],
+  "weight_min": 5,
+  "weight_max": 64,
+  "weight_sum": 5680,
+  "unique_upstream": 275,
+  "unique_downstream": 4,
+  "sources": {
+    "flywire783": 99,
+    "male_cns_v0_9": 176
+  },
+  "top": [
+    {
+      "weight": 64,
+      "up": "LPLC2_L (MaleCNS:31563)",
+      "up_id": "VFB_jrmc23t0",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 60,
+      "up": "LPLC2_L (MaleCNS:22253)",
+      "up_id": "VFB_jrmc23qi",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 59,
+      "up": "LPLC2_R (MaleCNS:20182)",
+      "up_id": "VFB_jrmc23sk",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 55,
+      "up": "LPLC2_L (MaleCNS:19787)",
+      "up_id": "VFB_jrmc23uh",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 54,
+      "up": "LPLC2_L (MaleCNS:22557)",
+      "up_id": "VFB_jrmc23r2",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 53,
+      "up": "LPLC2_R (MaleCNS:20269)",
+      "up_id": "VFB_jrmc23t1",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 50,
+      "up": "LPLC2_L (MaleCNS:533895)",
+      "up_id": "VFB_jrmc23ug",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 49,
+      "up": "LPLC2_R (MaleCNS:19608)",
+      "up_id": "VFB_jrmc23qx",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 48,
+      "up": "LPLC2_R (MaleCNS:20103)",
+      "up_id": "VFB_jrmc23pz",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 48,
+      "up": "LPLC2_R (MaleCNS:24187)",
+      "up_id": "VFB_jrmc23t5",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 48,
+      "up": "LPLC2_L (MaleCNS:25854)",
+      "up_id": "VFB_jrmc23qj",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 48,
+      "up": "LPLC2_L (MaleCNS:518731)",
+      "up_id": "VFB_jrmc23tq",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 47,
+      "up": "LPLC2_R (MaleCNS:20047)",
+      "up_id": "VFB_jrmc23tx",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 47,
+      "up": "LPLC2_R (MaleCNS:24401)",
+      "up_id": "VFB_jrmc23rb",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 47,
+      "up": "LPLC2_R (MaleCNS:21562)",
+      "up_id": "VFB_jrmc23q9",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 47,
+      "up": "LPLC2_L (MaleCNS:23919)",
+      "up_id": "VFB_jrmc23rk",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 46,
+      "up": "LPLC2_R (MaleCNS:23878)",
+      "up_id": "VFB_jrmc23ra",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 46,
+      "up": "LPLC2_L (MaleCNS:20799)",
+      "up_id": "VFB_jrmc23ut",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 46,
+      "up": "LPLC2_L (MaleCNS:520764)",
+      "up_id": "VFB_jrmc23sg",
+      "down": "DNp01(GF)_L (MaleCNS:10010)",
+      "down_id": "VFB_jrmc30mz",
+      "source": "male_cns_v0_9"
+    },
+    {
+      "weight": 45,
+      "up": "LPLC2_R (MaleCNS:20162)",
+      "up_id": "VFB_jrmc23sd",
+      "down": "DNp01(GF)_R (MaleCNS:10001)",
+      "down_id": "VFB_jrmc30my",
+      "source": "male_cns_v0_9"
+    }
+  ]
+}

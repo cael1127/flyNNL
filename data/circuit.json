@@ -1,0 +1,292 @@
+{
+  "title": "Forced-submersion circuit on VFB connectomes",
+  "queried": "2026-09-23T22:59:56Z",
+  "api": "https://v3-cached.virtualflybrain.org",
+  "exclude_dbs_default": [
+    "hb",
+    "fafb"
+  ],
+  "vfb_edges": [
+    {
+      "from": "LPLC2",
+      "to": "GF",
+      "pairs": 275,
+      "synapses": 5680,
+      "up_instances": 723,
+      "down_instances": 8,
+      "unique_up": 275,
+      "unique_down": 4,
+      "weight_max": 64,
+      "sources": {
+        "flywire783": 99,
+        "male_cns_v0_9": 176
+      },
+      "top": [
+        {
+          "w": 64,
+          "up": "LPLC2_L (MaleCNS:31563)",
+          "up_id": "VFB_jrmc23t0",
+          "down": "DNp01(GF)_L (MaleCNS:10010)",
+          "down_id": "VFB_jrmc30mz"
+        },
+        {
+          "w": 60,
+          "up": "LPLC2_L (MaleCNS:22253)",
+          "up_id": "VFB_jrmc23qi",
+          "down": "DNp01(GF)_L (MaleCNS:10010)",
+          "down_id": "VFB_jrmc30mz"
+        },
+        {
+          "w": 59,
+          "up": "LPLC2_R (MaleCNS:20182)",
+          "up_id": "VFB_jrmc23sk",
+          "down": "DNp01(GF)_R (MaleCNS:10001)",
+          "down_id": "VFB_jrmc30my"
+        },
+        {
+          "w": 55,
+          "up": "LPLC2_L (MaleCNS:19787)",
+          "up_id": "VFB_jrmc23uh",
+          "down": "DNp01(GF)_L (MaleCNS:10010)",
+          "down_id": "VFB_jrmc30mz"
+        },
+        {
+          "w": 54,
+          "up": "LPLC2_L (MaleCNS:22557)",
+          "up_id": "VFB_jrmc23r2",
+          "down": "DNp01(GF)_L (MaleCNS:10010)",
+          "down_id": "VFB_jrmc30mz"
+        }
+      ],
+      "query": "LPLC2_GF"
+    },
+    {
+      "from": "GF",
+      "to": "TTMn",
+      "pairs": 5,
+      "synapses": 375,
+      "up_instances": 8,
+      "down_instances": 22,
+      "unique_up": 4,
+      "unique_down": 4,
+      "weight_max": 146,
+      "sources": {
+        "neuprint_JRC_Manc_1_2_1": 3,
+        "male_cns_v1_0": 2
+      },
+      "top": [
+        {
+          "w": 146,
+          "up": "TBD (MANC:10000)",
+          "up_id": "VFB_jrcv07ps",
+          "down": "TBD (MANC:10110)",
+          "down_id": "VFB_jrcv07su"
+        },
+        {
+          "w": 135,
+          "up": "TBD (MANC:10002)",
+          "up_id": "VFB_jrcv07pu",
+          "down": "TBD (MANC:10068)",
+          "down_id": "VFB_jrcv07ro"
+        },
+        {
+          "w": 70,
+          "up": "DNp01(GF)_R (MaleCNS:10001)",
+          "up_id": "VFB_jrmc30my",
+          "down": "TTMn_R (MaleCNS:800146)",
+          "down_id": "VFB_jrmc0nlk"
+        },
+        {
+          "w": 20,
+          "up": "DNp01(GF)_L (MaleCNS:10010)",
+          "up_id": "VFB_jrmc30mz",
+          "down": "TTMn_L (MaleCNS:804642)",
+          "down_id": "VFB_jrmc0nll"
+        },
+        {
+          "w": 4,
+          "up": "TBD (MANC:10002)",
+          "up_id": "VFB_jrcv07pu",
+          "down": "TBD (MANC:10110)",
+          "down_id": "VFB_jrcv07su"
+        }
+      ],
+      "query": "GF_TTMn"
+    },
+    {
+      "from": "HRN",
+      "to": "hPN",
+      "pairs": 628,
+      "synapses": 18942,
+      "up_instances": 337,
+      "down_instances": 84,
+      "unique_up": 209,
+      "unique_down": 43,
+      "weight_max": 276,
+      "sources": {
+        "BANC888": 237,
+        "flywire783": 201,
+        "male_cns_v1_0": 190
+      },
+      "top": [
+        {
+          "w": 276,
+          "up": "TRN_VP1m_L (MaleCNS:902180)",
+          "up_id": "VFB_jrmc0nku",
+          "down": "VP1m_l2PN_L (MaleCNS:11143)",
+          "down_id": "VFB_jrmc002l"
+        },
+        {
+          "w": 246,
+          "up": "TRN_VP1m_R (MaleCNS:518020)",
+          "up_id": "VFB_jrmc0nkx",
+          "down": "VP1m_l2PN_R (MaleCNS:11521)",
+          "down_id": "VFB_jrmc002m"
+        },
+        {
+          "w": 236,
+          "up": "TRN_VP1m_L (MaleCNS:406728)",
+          "up_id": "VFB_jrmc0nkz",
+          "down": "VP1m_l2PN_L (MaleCNS:11143)",
+          "down_id": "VFB_jrmc002l"
+        },
+        {
+          "w": 232,
+          "up": "TRN_VP1m_R (MaleCNS:519589)",
+          "up_id": "VFB_jrmc0nl3",
+          "down": "VP1m_l2PN_R (MaleCNS:11521)",
+          "down_id": "VFB_jrmc002m"
+        },
+        {
+          "w": 232,
+          "up": "TRN_VP1m_R (MaleCNS:520007)",
+          "up_id": "VFB_jrmc0nl4",
+          "down": "VP1m_l2PN_R (MaleCNS:11521)",
+          "down_id": "VFB_jrmc002m"
+        }
+      ],
+      "query": "HRN_hPN"
+    },
+    {
+      "from": "Ir40a",
+      "to": "hPN",
+      "pairs": 297,
+      "synapses": 6886,
+      "up_instances": 214,
+      "down_instances": 84,
+      "unique_up": 131,
+      "unique_down": 20,
+      "weight_max": 94,
+      "sources": {
+        "flywire783": 109,
+        "BANC888": 75,
+        "male_cns_v1_0": 113
+      },
+      "top": [
+        {
+          "w": 94,
+          "up": "HRN_VP1d_R (MaleCNS:76958)",
+          "up_id": "VFB_jrmc2ukw",
+          "down": "VP1d_il2PN_L (MaleCNS:16648)",
+          "down_id": "VFB_jrmc001s"
+        },
+        {
+          "w": 84,
+          "up": "HRN_VP1d_R (MaleCNS:76958)",
+          "up_id": "VFB_jrmc2ukw",
+          "down": "VP1d_il2PN_R (MaleCNS:18049)",
+          "down_id": "VFB_jrmc001t"
+        },
+        {
+          "w": 77,
+          "up": "HRN_VP1d_L (MaleCNS:73560)",
+          "up_id": "VFB_jrmc2ul3",
+          "down": "VP1d_il2PN_L (MaleCNS:16648)",
+          "down_id": "VFB_jrmc001s"
+        },
+        {
+          "w": 69,
+          "up": "HRN_VP1d_L (MaleCNS:73560)",
+          "up_id": "VFB_jrmc2ul3",
+          "down": "VP1d_il2PN_R (MaleCNS:18049)",
+          "down_id": "VFB_jrmc001t"
+        },
+        {
+          "w": 66,
+          "up": "HRN_VP1d_L (MaleCNS:452352)",
+          "up_id": "VFB_jrmc2ukq",
+          "down": "VP1d_il2PN_R (MaleCNS:18049)",
+          "down_id": "VFB_jrmc001t"
+        }
+      ],
+      "query": "Ir40a_hPN"
+    }
+  ],
+  "datasets": [
+    {
+      "symbol": "BANC",
+      "label": "BANC web interface v888"
+    },
+    {
+      "symbol": "fw",
+      "label": "FlyWire v783"
+    },
+    {
+      "symbol": "ol",
+      "label": "JRC Optic Lobe v1.0.1"
+    },
+    {
+      "symbol": "mv",
+      "label": "MANC v1.2.1"
+    },
+    {
+      "symbol": "hb",
+      "label": "hemibrain v1.2.1"
+    },
+    {
+      "symbol": "mc",
+      "label": "male-cns v1.0"
+    },
+    {
+      "symbol": "fafb",
+      "label": "VFB CATMAID FAFB"
+    },
+    {
+      "symbol": "l1em",
+      "label": "VFB CATMAID L1 CNS"
+    }
+  ],
+  "classes": {
+    "LPLC2": {
+      "id": "FBbt_00111763",
+      "label": "lobula plate-lobula columnar neuron LPLC2",
+      "role": "looming visual startle"
+    },
+    "GF": {
+      "id": "FBbt_00004020",
+      "symbol": "DNp01",
+      "label": "giant fiber neuron",
+      "role": "jump-escape command"
+    },
+    "TTMn": {
+      "id": "FBbt_00007406",
+      "label": "mesothoracic tergotrochanter muscle motor neuron",
+      "role": "jump motor"
+    },
+    "HRN": {
+      "id": "FBbt_00005923",
+      "label": "hygrosensory neuron",
+      "role": "humidity / water contact"
+    },
+    "Ir40a": {
+      "id": "FBbt_00110990",
+      "label": "adult hygrosensory neuron Ir40a",
+      "role": "dry-sensing"
+    },
+    "hPN": {
+      "id": "FBbt_00047227",
+      "label": "hygrosensory projection neuron",
+      "role": "second-order humidity"
+    }
+  }
+}

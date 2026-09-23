@@ -1,0 +1,52 @@
+{
+  "name": "lplc2_gf_grouped",
+  "params": {
+    "upstream_type": "LPLC2",
+    "downstream_type": "giant fiber neuron",
+    "group_by_class": "true"
+  },
+  "count": 1,
+  "resolved": {
+    "upstream": {
+      "query": "LPLC2",
+      "id": "FBbt_00111763",
+      "label": "lobula plate-lobula columnar neuron LPLC2",
+      "classes_searched": 1,
+      "instances": 659
+    },
+    "downstream": {
+      "query": "giant fiber neuron",
+      "id": "FBbt_00004020",
+      "label": "giant fiber neuron",
+      "classes_searched": 1,
+      "instances": 8
+    }
+  },
+  "warnings": [
+    "'LPLC2' is not a VFB term; matched the only term containing it: 'lobula plate-lobula columnar neuron LPLC2' (FBbt_00111763)."
+  ],
+  "excluded_dbs": [
+    "hb",
+    "fafb"
+  ],
+  "weight_sum": 0,
+  "unique_up": 1,
+  "unique_down": 1,
+  "sources": {
+    "null": 1
+  },
+  "top": [
+    {
+      "upstream_class": "lobula plate-lobula columnar neuron LPLC2",
+      "upstream_class_id": "FBbt_00111763",
+      "downstream_class": "giant fiber neuron",
+      "downstream_class_id": "FBbt_00004020",
+      "total_upstream_count": 574,
+      "connected_upstream_count": 275,
+      "percent_connected": 48,
+      "pairwise_connections": 275,
+      "total_weight": 5680,
+      "average_weight": 20
+    }
+  ]
+}
