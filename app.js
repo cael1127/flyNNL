@@ -520,20 +520,37 @@ function applyVfb(v) {
   }
 }
 
+const offline = createOfflineSim();
+let live = false;
+
 function protocol(action) {
+  const speed = Number(document.getElementById("speed").value);
+  if (!live) {
+    offline.protocol(action, speed);
+    return;
+  }
   fetch("/protocol", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action, speed: Number(document.getElementById("speed").value) }),
+    body: JSON.stringify({ action, speed }),
   }).catch(() => {});
 }
 
-function connect() {
+function startOffline() {
+  live = false;
+  document.getElementById("engine").textContent = "browser-physio";
+  document.getElementById("fly-status").textContent =
+    "Static host — brain, spikes, and chemistry run here. NeuroMechFly body needs the local Python server.";
+  applyVfb(STATIC_VFB);
+}
+
+function connectWs() {
   const proto = location.protocol === "https:" ? "wss" : "ws";
   const ws = new WebSocket(`${proto}://${location.host}/stream`);
   const img = document.getElementById("fly-view");
   const status = document.getElementById("fly-status");
   ws.onmessage = (ev) => {
+    live = true;
     const msg = JSON.parse(ev.data);
     document.getElementById("engine").textContent = msg.engine || "engine";
     if (msg.jpeg) {
@@ -545,10 +562,29 @@ function connect() {
     if (msg.physio) applyPhysio(msg.physio);
     if (msg.vfb) applyVfb(msg.vfb);
   };
-  ws.onclose = () => {
-    status.textContent = "Stream closed — retrying";
-    setTimeout(connect, 1500);
+  ws.onerror = () => {
+    if (!live) startOffline();
   };
+  ws.onclose = () => {
+    if (live) {
+      live = false;
+      status.textContent = "Stream closed — using in-browser physio";
+    }
+    startOffline();
+  };
+}
+
+async function connect() {
+  try {
+    const r = await fetch("/health", { cache: "no-store" });
+    if (r.ok) {
+      connectWs();
+      return;
+    }
+  } catch {
+    /* static host */
+  }
+  startOffline();
 }
 
 function init() {
@@ -573,7 +609,16 @@ function init() {
   document.getElementById("reset").onclick = () => protocol("reset");
   document.getElementById("speed").onchange = () => protocol("speed");
   renderInspector();
-  function loop() {
+  let last = performance.now();
+  function loop(now) {
+    if (!live) {
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      offline.step(dt * offline.s.speed);
+      applyPhysio(offline.snapshot());
+    } else {
+      last = now;
+    }
     drawBrain(brain);
     drawEphys(ephys);
     requestAnimationFrame(loop);

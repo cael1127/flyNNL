@@ -1,0 +1,8 @@
+{
+  "name": "flynnl",
+  "private": true,
+  "description": "Static publish of the Drosophila CNS viewer. The NeuroMechFly body needs the local Python server.",
+  "scripts": {
+    "build": "mkdir -p dist && cp index.html app.js styles.css physio.js dist/"
+  }
+}
