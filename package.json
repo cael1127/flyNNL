@@ -3,6 +3,6 @@
   "private": true,
   "description": "Static publish of the Drosophila CNS viewer, including a browser-side tethered body.",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html app.js styles.css physio.js flybody.js dist/"
+    "build": "mkdir -p dist && cp index.html cns-client.js styles.css physio.js flybody.js dist/"
   }
 }

@@ -95,9 +95,9 @@ def styles() -> FileResponse:
     return FileResponse(ROOT / "styles.css", media_type="text/css", headers=NO_CACHE)
 
 
-@app.get("/app.js")
+@app.get("/cns-client.js")
 def script() -> FileResponse:
-    return FileResponse(ROOT / "app.js", media_type="text/javascript", headers=NO_CACHE)
+    return FileResponse(ROOT / "cns-client.js", media_type="text/javascript", headers=NO_CACHE)
 
 
 @app.get("/physio.js")
